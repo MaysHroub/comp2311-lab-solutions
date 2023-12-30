@@ -2,7 +2,7 @@ package labs1_5;
 
 import java.io.Serializable;
 
-public abstract class Human implements HumanBeing {
+public abstract class Human implements HumanBeing, Serializable {
 	private String name;
 	private char gender;
 
@@ -10,10 +10,6 @@ public abstract class Human implements HumanBeing {
 		setName(name);
 		setGender(gender);
 	}
-
-//	public Human() {
-//		
-//	}
 	
 	public String getName() {
 		return name;
