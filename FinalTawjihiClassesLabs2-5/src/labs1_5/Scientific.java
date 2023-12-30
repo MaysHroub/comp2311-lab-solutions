@@ -2,14 +2,10 @@ package labs1_5;
 
 import java.io.Serializable;
 
-public class Scientific extends Tawjihi implements Serializable {
+public class Scientific extends Tawjihi {
 
 	public Scientific(int seatingNum, int id, String name, char gender, String school) {
 		super(seatingNum, id, name, gender, school);
-	}
-	
-	public Scientific() {
-		super(0, 0, "", FEMALE, "");
 	}
 
 	@Override
