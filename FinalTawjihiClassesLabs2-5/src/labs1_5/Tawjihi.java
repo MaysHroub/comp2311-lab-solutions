@@ -14,10 +14,6 @@ public abstract class Tawjihi extends Student implements Comparable<Tawjihi> {
 		year = 2022;
 		subjects = new ArrayList<>();
 	}
-
-	public Tawjihi() {
-		this(0, 0, "", FEMALE, "");
-	}
 	
 	public abstract double calculateAverage();
 
