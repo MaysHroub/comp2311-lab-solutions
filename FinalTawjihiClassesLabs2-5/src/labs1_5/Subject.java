@@ -78,6 +78,8 @@ public class Subject implements Comparable<Subject>, Serializable {
 			System.out.println("The mark must be between [0-200] (depending on the type of the subject)");
 	}
 
+	// ordered according to the type.
+	// we were requested to implement this method differently...
 	@Override
 	public int compareTo(Subject o) {
 		int type1 = (type.equalsIgnoreCase(MANDATORY)) ? MAND : ELEC;
