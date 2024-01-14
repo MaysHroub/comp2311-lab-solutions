@@ -34,18 +34,17 @@ public class TestIOStudent {
 
 		File file = new File("Tawjihi.dat");
 		
-		// write the two students' info to the file
-		StudentOutputStream out = new StudentOutputStream(file);
-		out.wrtieInfo(student1);
-		out.wrtieInfo(student2);
-		out.close();
-		
-		// read the two students' info from the file
-		StudentInputStream in = new StudentInputStream(file);
-		ArrayList<Tawjihi> stds = in.readInfo();
-		System.out.println(stds.get(0));
-		System.out.println(stds.get(1));
-		in.close();
+		try (StudentOutputStream out = new StudentOutputStream(file);
+			StudentInputStream in = new StudentInputStream(file);) {
+			// write the two students' info to the file
+			out.writeInfo(student1);
+			out.writeInfo(student2);
+			
+			// read the two students' info from the file and print them on the console
+			ArrayList<Tawjihi> stds = in.readInfo();
+			System.out.println(stds.get(0));
+			System.out.println(stds.get(1));
+		} 
 		
 		// use Object Out/In Stream to perform IO operations on a student object
 		File file2 = new File("Tawjihi2.dat");
@@ -55,7 +54,6 @@ public class TestIOStudent {
 			System.out.println("\nUsing Object Output/Input Stream:");
 			oos.writeObject(student1);		
 			Tawjihi std = (Scientific) ois.readObject();
-			// ois.defaultReadObject();
 			System.out.println(std);
 			System.out.println(std.getSubjects());
 			
