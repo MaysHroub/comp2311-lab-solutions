@@ -1,7 +1,5 @@
 package labs1_5;
 
-import java.io.Serializable;
-
 public class Scientific extends Tawjihi {
 
 	public Scientific(int seatingNum, int id, String name, char gender, String school) {
