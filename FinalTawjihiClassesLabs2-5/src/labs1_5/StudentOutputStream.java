@@ -15,7 +15,7 @@ public class StudentOutputStream implements AutoCloseable {
 		outputStream = new DataOutputStream(new FileOutputStream(file, true));
 	}
 
-	public void wrtieInfo(Tawjihi student) throws IOException {
+	public void writeInfo(Tawjihi student) throws IOException {
 		outputStream.writeInt(student.getId());
 		outputStream.writeUTF(student.getName());
 		outputStream.writeChar(student.getGender());
