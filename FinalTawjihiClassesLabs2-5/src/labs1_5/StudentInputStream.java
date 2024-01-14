@@ -7,7 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class StudentInputStream {
+public class StudentInputStream implements AutoCloseable {
 
 	private DataInputStream inputStream;
 
@@ -46,6 +46,7 @@ public class StudentInputStream {
 		return students;
 	}
 
+	@Override
 	public void close() throws IOException {
 		inputStream.close();
 	}
