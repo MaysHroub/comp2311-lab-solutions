@@ -7,7 +7,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class StudentOutputStream {
+public class StudentOutputStream implements AutoCloseable {
 
 	private DataOutputStream outputStream;
 
@@ -36,6 +36,7 @@ public class StudentOutputStream {
 
 	}
 
+	@Override
 	public void close() throws IOException {
 		outputStream.close();
 	}
